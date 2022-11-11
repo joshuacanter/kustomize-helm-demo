@@ -1,0 +1,11 @@
+bases:
+- ../../base
+
+images:
+- name: quay.io/jcanter/sample-apps
+  newName: quay.io/jcanter/sample-apps
+  newTag: int
+
+patchesStrategicMerge:
+- configmap.yaml
+- deployment.yaml

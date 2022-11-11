@@ -1,0 +1,12 @@
+resources: 
+ - deployment.yaml
+ - route.yaml
+ - service.yaml
+
+commonLabels:
+  deploy-generation: kustomize
+
+configMapGenerator:
+  - name: sample-java-cm
+    literals:
+      - SPRING_PROFILES_ACTIVE=default

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-java
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-java
+  template:
+    metadata:
+      labels:
+        app: sample-java
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: sample-java-cm
+        image: quay.io/jcanter/sample-apps:latest
+        imagePullPolicy: Always
+        name: sample-java
+        ports:
+        - containerPort: 8080
+          protocol: TCP
