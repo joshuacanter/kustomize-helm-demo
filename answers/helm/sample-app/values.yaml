@@ -1,7 +1,7 @@
 replicas: 1
 
 image: quay.io/jcanter/sample-apps
-imageTag: dev
+imageTag: buildconfig
 
 env:
   SPRING_PROFILES_ACTIVE: dev
